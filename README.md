@@ -25,7 +25,7 @@ entrar a
 htpp://localhost:3000
 ```
 
-Para probar esto, nos desacrgamos el projecto de backend en https://github.com/dariomolina/cintelink-challenge y seguir
+Para probar esto, nos descargamos el proyecto de backend en https://github.com/dariomolina/cintelink-challenge y seguir
 las instrucciones del README para levantarlo y crear los registros necesarios en la db. 
 
 * Debemos obtener el Token (access) para poder realizar conectarnos al websocket con las 
