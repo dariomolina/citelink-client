@@ -5,11 +5,12 @@ const NotificationList = () => {
 
   useEffect(() => {
     // Define the WebSocket connection
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNDUxNzYwLCJpYXQiOjE3MjM0NTE0NjAsImp0aSI6ImIyYmZmZjY0Yjg5ODQ3YTdiNjZjNDlkYzlmYTNlYTVhIiwidXNlcl9pZCI6MX0.GbudbNNcrG5Odj-K1kNtp2aay7rbr-V9xUaqNtaGbzY";
-    const ws = new WebSocket(`ws://127.0.0.1:9000/ws/notifications/?token=${token}`);
+    const ws_url = `${import.meta.env.VITE_WEBSOCKERT_URL}/ws/notifications/?token=${import.meta.env.VITE_WS_TOKEN}`
+    const ws = new WebSocket(ws_url)
 
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
+      console.log(data);
       setNotifications(prevNotifications => {
 
         // Add the new notification
@@ -17,7 +18,7 @@ const NotificationList = () => {
           ...prevNotifications,
           {
             timestamp: data.timestamp,
-            notification_id: data.notification_id,
+            id: data.id,
             message: data.message,
           }
         ];
@@ -42,12 +43,12 @@ const NotificationList = () => {
             <th scope="col">#</th>
             <th scope="col">Message</th>
             <th scope="col">Timestamp</th>
-          </tr>
+          </tr> 
         </thead>
         <tbody>
           {notifications.map((item) => (
-            <tr key={item.notification_id} scope="row">
-              <td>{item.notification_id}</td>
+            <tr key={item.id} scope="row">
+              <td>{item.id}</td>
               <td>{item.message}</td>
               <td>{item.timestamp}</td>
             </tr>

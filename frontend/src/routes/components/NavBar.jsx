@@ -17,13 +17,9 @@ export const NavBar = () => {
 							</Link>
 						</li>
 						<li className="nav-item dropdown">
-							<Link className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Suscriptions
+							<Link className="nav-link active" to="/all-notifications" role="button">
+							All Notifications
 							</Link>
-							<ul className="dropdown-menu">
-								<li><NavLink className="nav-link" to="/create-suscriptions">Create</NavLink></li>
-								<li><NavLink className="nav-link" to="/list-suscriptions">List</NavLink></li>
-							</ul>
 						</li>
 					</ul>
 				</div>
