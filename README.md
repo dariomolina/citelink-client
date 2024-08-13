@@ -22,7 +22,7 @@ docker-compose up
 
 entrar a 
 ```
-htpp://localhost:8000
+htpp://localhost:3000
 ```
 
 Para probar esto, nos desacrgamos el projecto de backend en https://github.com/dariomolina/cintelink-challenge y seguir
