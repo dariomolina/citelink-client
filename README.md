@@ -28,8 +28,8 @@ htpp://localhost:3000
 Para probar esto, nos descargamos el proyecto de backend en https://github.com/dariomolina/cintelink-challenge y seguir
 las instrucciones del README para levantarlo y crear los registros necesarios en la db. 
 
-* Debemos obtener el Token (access) para poder realizar conectarnos al websocket con las 
-credenciales de algun usuario registrado (en este caso se usa el usuario admin)
+* Debemos obtener el Token (access) para poder conectarnos al websocket con las 
+credenciales de algun usuario ya registrado (en este caso se usa el usuario admin)
 ```
 POST http://localhost:8000/api/token/
 Body
@@ -45,12 +45,12 @@ Response:
 }
 ```
 
-* con el TOKEN "access", lo asignamos a la variable VITE_WS_TOKEN del archivo .env, ubicado en frontend/.env. Esto es para
-poder conectarse al websocket
+* con el TOKEN "access" obtenido, lo asignamos a la variable VITE_WS_TOKEN del archivo .env, ubicado en frontend/.env. Esto es para
+poder conectarse al websocket con el usuario correspondiente.
 
 
-Luego de eso, podemos ingresar a postman y crear Notifications.
-Este endpoint creará y enviará notificaciones mediante django-channels a todos los users con el tag_id=1 
+Luego de eso, podemos ingresar a postman y crear Notifications en el backend [ POST http://localhost:8000/api/notifications/ ].
+Este endpoint creará y enviará notificaciones mediante django-channels a todos los users con el tag con id igual 1 
 segun este ejemplo:
 ```
 Estructura del body
